@@ -13,8 +13,7 @@ The task involved predicting four binary targets (`target_1`, `target_2`, `targe
 3. **Feature Engineering:**
    - Aggregated data over months and clients to create higher-level features. These included:
      - Movement diversity: capturing unique locations (geohashes).
-     - Event diversity: number of distinct event types and subtypes.
-     - Transaction statistics: maximum, mean, and total transaction amounts.
+     - Transaction statistics: total transaction amounts.
    - Addressed missing values (`NaNs`) by filling them with appropriate strategies (e.g., mean for numeric features).
    - Filtered the target DataFrame, balancing the dataset.
 
