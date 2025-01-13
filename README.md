@@ -5,7 +5,7 @@ The task involved predicting four binary targets (`target_1`, `target_2`, `targe
 
 #### Approach:
 1. **Data Preparation:**
-   - Initially downloaded the dataset but faced memory constraints on my machine. To overcome this, I sampled data from fold 0 by selecting 10 records per client. This provided a manageable subset while preserving a representative structure of the original data.
+   - Initially downloaded the dataset but faced memory constraints on my machine. To overcome this, I sampled data by selecting 10 records per client. This provided a manageable subset while preserving a representative structure of the original data.
    
 2. **Exploratory Data Analysis (EDA):**
    - Visualized feature distributions using histograms and matplotlib. The distributions showed that most features were neither uniformly nor normally distributed, highlighting potential challenges in applying basic machine learning models.
@@ -15,7 +15,7 @@ The task involved predicting four binary targets (`target_1`, `target_2`, `targe
      - Movement diversity: capturing unique locations (geohashes).
      - Event diversity: number of distinct event types and subtypes.
      - Transaction statistics: maximum, mean, and total transaction amounts.
-   - Addressed missing values (`NaNs`) by filling them with appropriate strategies (e.g., mode for categorical data, mean for numeric features).
+   - Addressed missing values (`NaNs`) by filling them with appropriate strategies (e.g., mean for numeric features).
    - Filtered the target DataFrame, balancing the dataset.
 
 4. **Correlation and Insights:**
@@ -24,6 +24,7 @@ The task involved predicting four binary targets (`target_1`, `target_2`, `targe
 5. **Model Training:**
    - Trained a baseline RandomForestClassifier using the processed features.
    - Evaluated performance with sklearn's classification report. The results were suboptimal, reflecting the need for additional feature exploration and advanced modeling.
+   - Tried to improve the result by apllying **cross-validation** and **xgboost**.
 
 6. **Results and Challenges:**
    - Achieved a baseline model but with weak predictive performance. Factors contributing to this include:
@@ -37,7 +38,7 @@ The task involved predicting four binary targets (`target_1`, `target_2`, `targe
   - Reduce dimensionality using PCA or feature selection techniques to highlight key patterns.
   
 - **Modeling Enhancements:**
-  - Experiment with gradient boosting methods (e.g., XGBoost, LightGBM).
+  - Experiment with gradient boosting methods (e.g., LightGBM).
   - Explore deep learning architectures, such as feedforward neural networks.
   - Apply feature interaction techniques or automated feature selection tools.
   
